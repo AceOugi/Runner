@@ -78,7 +78,7 @@ class Runner
     /**
      * @param Request $request
      * @param Response $response
-     * @return Response
+     * @return mixed
      */
     public function dispatch(Request $request, Response $response)
     {
@@ -92,7 +92,7 @@ class Runner
      * Alias of $this->dispatch
      * @param Request $request
      * @param Response $response
-     * @return Response
+     * @return mixed
      */
     public function run(Request $request, Response $response)
     {
@@ -103,7 +103,7 @@ class Runner
      * @param Request $request
      * @param Response $response
      * @param callable[] ...$callables unshift callables in queue
-     * @return Response
+     * @return mixed
      */
     public function __invoke(Request $request, Response $response, ...$callables)
     {
