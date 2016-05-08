@@ -2,9 +2,6 @@
 
 namespace AceOugi;
 
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
-
 class Runner
 {
     /** @var \SplQueue */
@@ -76,11 +73,11 @@ class Runner
     }
 
     /**
-     * @param Request $request
-     * @param Response $response
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @param \Psr\Http\Message\ResponseInterface $response
      * @return mixed
      */
-    public function dispatch(Request $request, Response $response)
+    public function dispatch(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
     {
         if ($this->queue->isEmpty())
             return $response;
@@ -90,22 +87,22 @@ class Runner
 
     /**
      * Alias of $this->dispatch
-     * @param Request $request
-     * @param Response $response
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @param \Psr\Http\Message\ResponseInterface $response
      * @return mixed
      */
-    public function run(Request $request, Response $response)
+    public function run(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
     {
         return $this->dispatch($request, $response);
     }
 
     /**
-     * @param Request $request
-     * @param Response $response
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @param \Psr\Http\Message\ResponseInterface $response
      * @param callable[] ...$callables unshift callables in queue
      * @return mixed
      */
-    public function __invoke(Request $request, Response $response, ...$callables)
+    public function __invoke(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response, ...$callables)
     {
         while ($callable = array_pop($callables))
             $this->queue->unshift($callable);
