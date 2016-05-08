@@ -21,28 +21,12 @@ class Runner
     }
 
     /**
-     * @param callable $callable
-     */
-    public function push($callable)
-    {
-        $this->queue->push($callable);
-    }
-
-    /**
-     * @return callable
-     */
-    public function pop()
-    {
-        return $this->queue->pop();
-    }
-
-    /**
      * Alias of $this->push()
      * @param callable $callable
      */
     public function add($callable)
     {
-        $this->push($callable);
+        $this->queue->push($callable);
     }
 
     /**
