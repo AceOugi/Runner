@@ -57,7 +57,7 @@ class Runner
     /**
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @param callable[] ...$callables unshift callables in queue
+     * @param callable[] ...$callables
      * @return mixed
      */
     public function __invoke(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response, ...$callables)
