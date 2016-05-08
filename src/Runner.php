@@ -21,24 +21,6 @@ class Runner
     }
 
     /**
-     * @return callable|null
-     */
-    public function getResolver()
-    {
-        return $this->resolver;
-    }
-
-    /**
-     * @param callable|null $resolver
-     * @return $this
-     */
-    public function setResolver(callable $resolver = null)
-    {
-        $this->resolver = $resolver;
-        return $this;
-    }
-
-    /**
      * @param callable $callable
      * @return callable
      */
