@@ -21,15 +21,6 @@ class Runner
     }
 
     /**
-     * Alias of $this->push()
-     * @param callable $callable
-     */
-    public function add($callable)
-    {
-        $this->queue->push($callable);
-    }
-
-    /**
      * @return callable|null
      */
     public function getResolver()
@@ -54,6 +45,15 @@ class Runner
     protected function resolve($callable) : callable
     {
         return ($resolver = $this->resolver) ? $resolver($callable) : $callable;
+    }
+
+    /**
+     * Alias of $this->push()
+     * @param callable $callable
+     */
+    public function add($callable)
+    {
+        $this->queue->push($callable);
     }
 
     /**
