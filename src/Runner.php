@@ -26,7 +26,7 @@ class Runner
      */
     protected function resolve($callable) : callable
     {
-        return ($resolver = $this->resolver) ? $resolver($callable) : $callable;
+        return (!is_callable($callable) AND $resolver = $this->resolver) ? $resolver($callable) : $callable;
     }
 
     /**
