@@ -4,11 +4,11 @@ namespace AceOugi;
 
 class Runner
 {
-    /** @var \SplQueue */
-    protected $queue;
-
     /** @var callable */
     protected $resolver;
+
+    /** @var \SplQueue */
+    protected $queue;
 
     /**
      * Runner constructor.
