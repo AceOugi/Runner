@@ -46,7 +46,7 @@ class Runner
      * @param \Psr\Http\Message\ResponseInterface $response
      * @return mixed
      */
-    public function dispatch(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
+    public function call(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
     {
         if ($this->queue->isEmpty())
             return $response;
