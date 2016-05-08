@@ -9,9 +9,6 @@
         "zendframework/zend-diactoros": "*",
         "phpunit/phpunit": "*"
     },
-    "suggest": {
-        "aceougi/resolver": "middleware resolver"
-    },
     "autoload": {
         "classmap": [
             "src/Runner.php"
