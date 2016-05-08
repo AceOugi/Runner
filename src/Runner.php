@@ -65,6 +65,6 @@ class Runner
         while ($callable = array_pop($callables))
             $this->queue->unshift($callable);
 
-        return $this->dispatch($request, $response);
+        return $this->call($request, $response);
     }
 }
