@@ -30,7 +30,7 @@ class Runner
     }
 
     /**
-     * @param $callable
+     * @param callable[] $callables
      * @return self
      */
     public function add(...$callables)
