@@ -55,17 +55,6 @@ class Runner
     }
 
     /**
-     * Alias of $this->dispatch
-     * @param \Psr\Http\Message\ServerRequestInterface $request
-     * @param \Psr\Http\Message\ResponseInterface $response
-     * @return mixed
-     */
-    public function run(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
-    {
-        return $this->dispatch($request, $response);
-    }
-
-    /**
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Message\ResponseInterface $response
      * @param callable[] ...$callables unshift callables in queue
