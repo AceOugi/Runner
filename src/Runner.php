@@ -30,12 +30,15 @@ class Runner
     }
 
     /**
-     * Alias of $this->push()
-     * @param callable $callable
+     * @param $callable
+     * @return self
      */
-    public function add($callable)
+    public function add(...$callables)
     {
-        $this->queue->push($callable);
+        foreach ($callables as $callable)
+            $this->queue->push($callable);
+
+        return $this;
     }
 
     /**
