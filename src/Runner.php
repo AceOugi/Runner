@@ -62,9 +62,6 @@ class Runner
         while ($callable = array_pop($callables))
             $this->queue->unshift($callable);
 
-        if ($this->queue->isEmpty())
-            return $response;
-
-        return call_user_func($this->resolve($this->queue->dequeue()), $request, $response, $this);
+        return $this->queue->isEmpty() ? $response : call_user_func($this->resolve($this->queue->dequeue()), $request, $response, $this);
     }
 }
