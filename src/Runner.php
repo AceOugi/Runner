@@ -48,10 +48,7 @@ class Runner
      */
     public function call(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
     {
-        if ($this->queue->isEmpty())
-            return $response;
-
-        return call_user_func($this->resolve($this->queue->dequeue()), $request, $response, $this);
+        return $this->__invoke($request, $response);
     }
 
     /**
@@ -65,6 +62,9 @@ class Runner
         while ($callable = array_pop($callables))
             $this->queue->unshift($callable);
 
-        return $this->call($request, $response);
+        if ($this->queue->isEmpty())
+            return $response;
+
+        return call_user_func($this->resolve($this->queue->dequeue()), $request, $response, $this);
     }
 }
