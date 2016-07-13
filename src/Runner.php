@@ -42,6 +42,30 @@ class Runner
     }
 
     /**
+     * @param callable[] $callables
+     * @return self
+     */
+    public function append(...$callables)
+    {
+        foreach ($callables as $callable)
+            $this->queue->enqueue($callable);
+
+        return $this;
+    }
+
+    /**
+     * @param callable[] $callables
+     * @return self
+     */
+    public function prepend(...$callables)
+    {
+        foreach ($callables as $callable)
+            $this->queue->unshift($callable);
+
+        return $this;
+    }
+
+    /**
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Message\ResponseInterface $response
      * @return mixed
