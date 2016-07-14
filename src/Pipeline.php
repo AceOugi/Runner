@@ -71,8 +71,7 @@ class Pipeline
      */
     public function __invoke(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response, ...$callables)
     {
-        while ($callable = array_pop($callables))
-            $this->queue->unshift($callable);
+        $this->prepend(...$callables);
 
         return $this->queue->isEmpty() ? $response : call_user_func($this->resolve($this->queue->dequeue()), $request, $response, $this);
     }
