@@ -1,5 +1,5 @@
 {
-    "name": "aceougi/pipeline",
+    "name": "ace/pipeline",
     "type": "library",
     "require": {
         "php": "^7.0",
