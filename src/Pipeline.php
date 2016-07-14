@@ -2,7 +2,7 @@
 
 namespace AceOugi;
 
-class Runner
+class Pipeline
 {
     /** @var callable */
     protected $resolver;
