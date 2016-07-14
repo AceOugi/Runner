@@ -4,11 +4,11 @@ namespace AceOugi;
 
 class Pipeline
 {
-    /** @var callable */
-    protected $resolver;
-
     /** @var \SplQueue */
     protected $queue;
+
+    /** @var callable */
+    protected $resolver;
 
     /**
      * Runner constructor.
@@ -18,15 +18,6 @@ class Pipeline
     {
         $this->resolver = $resolver;
         $this->queue = new \SplQueue();
-    }
-
-    /**
-     * @param callable $callable
-     * @return callable
-     */
-    protected function resolve($callable) : callable
-    {
-        return (!is_callable($callable) AND $resolver = $this->resolver) ? $resolver($callable) : $callable;
     }
 
     /**
@@ -51,6 +42,15 @@ class Pipeline
             $this->queue->unshift($callable);
 
         return $this;
+    }
+
+    /**
+     * @param callable $callable
+     * @return callable
+     */
+    protected function resolve($callable) : callable
+    {
+        return (!is_callable($callable) AND $resolver = $this->resolver) ? $resolver($callable) : $callable;
     }
 
     /**
