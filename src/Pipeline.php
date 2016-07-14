@@ -56,16 +56,6 @@ class Pipeline
     /**
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Message\ResponseInterface $response
-     * @return mixed
-     */
-    public function call(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response)
-    {
-        return $this->__invoke($request, $response);
-    }
-
-    /**
-     * @param \Psr\Http\Message\ServerRequestInterface $request
-     * @param \Psr\Http\Message\ResponseInterface $response
      * @param callable[] ...$callables
      * @return mixed
      */
