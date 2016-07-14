@@ -33,18 +33,6 @@ class Pipeline
      * @param callable[] $callables
      * @return self
      */
-    public function add(...$callables)
-    {
-        foreach ($callables as $callable)
-            $this->queue->push($callable);
-
-        return $this;
-    }
-
-    /**
-     * @param callable[] $callables
-     * @return self
-     */
     public function append(...$callables)
     {
         foreach ($callables as $callable)
