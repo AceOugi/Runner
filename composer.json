@@ -1,5 +1,5 @@
 {
-    "name": "ace/pipeline",
+    "name": "ace/runner",
     "type": "library",
     "require": {
         "php": "^7.0",
@@ -10,6 +10,6 @@
         "phpunit/phpunit": "*"
     },
     "autoload": {
-        "classmap": ["src/Pipeline.php"]
+        "classmap": ["src/Runner.php"]
     }
 }
