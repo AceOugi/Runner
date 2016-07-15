@@ -1,5 +1,5 @@
 {
-    "name": "ace/runner",
+    "name": "ace/middleware-runner",
     "type": "library",
     "require": {
         "php": "^7.0",
