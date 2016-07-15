@@ -58,7 +58,7 @@ class Runner
      * @param \Psr\Http\Message\ServerRequestInterface $request
      * @param \Psr\Http\Message\ResponseInterface $response
      * @param callable[] ...$callables
-     * @return mixed
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function __invoke(\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Message\ResponseInterface $response, ...$callables)
     {
