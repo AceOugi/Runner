@@ -17,7 +17,7 @@ class Runner
     public function __construct(callable $resolver = null)
     {
         $this->queue = new \SplQueue();
-        
+
         $this->resolver = $resolver;
     }
 
