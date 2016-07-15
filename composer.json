@@ -10,6 +10,6 @@
         "phpunit/phpunit": "*"
     },
     "autoload": {
-        "classmap": ["src/Runner.php"]
+        "classmap": ["src/Ace/Runner.php"]
     }
 }
