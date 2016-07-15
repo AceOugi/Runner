@@ -2,7 +2,7 @@
 
 namespace Ace;
 
-class Pipeline
+class Runner
 {
     /** @var \SplQueue */
     protected $queue;
