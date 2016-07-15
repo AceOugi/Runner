@@ -2,7 +2,7 @@
 
 namespace Ace;
 
-class Runner
+class MiddlewareRunner
 {
     /** @var \SplQueue */
     protected $queue;
