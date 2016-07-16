@@ -39,7 +39,7 @@ class MiddlewareRunner
      */
     public function prepend(...$callables)
     {
-        foreach ($callables as $callable)
+        while ($callable = array_pop($callables))
             $this->queue->unshift($callable);
 
         return $this;
